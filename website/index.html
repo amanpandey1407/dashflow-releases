@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DashFlow — Desktop Download Manager for Windows</title>
+  <meta name="description" content="DashFlow is an engineered desktop download manager for Windows. It splits files into simultaneous multi-stream segments, bypassing server throttling with real-time socket rebalancing and one-click browser interception.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Warp Speed Cosmic Particle Background -->
+  <canvas id="warp-canvas"></canvas>
+
+  <!-- Primary Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="#" class="brand-link">
+          <img src="assets/logo.svg" alt="DashFlow Logo" class="brand-logo">
+          <span class="brand-name">DashFlow</span>
+        </a>
+        <span class="brand-sub">Windows Desktop Client</span>
+      </div>
+
+      <nav class="nav-center">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#engine" class="nav-link">Architecture</a>
+        <a href="#benchmarks" class="nav-link">Comparison</a>
+        <a href="#extension" class="nav-link">Extension</a>
+        <a href="#security" class="nav-link">Security</a>
+        <a href="#downloads" class="nav-link">Downloads</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="https://github.com/amanpandey1407/dashflow-releases" target="_blank" rel="noopener" class="nav-github-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Setup.exe" class="nav-cta-btn">
+          <span>Download</span>
+          <span class="btn-arrow">&darr;</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-container">
+        
+        <div class="hero-header-box">
+          <div class="hud-pill">
+            <span class="status-indicator"></span>
+            <span class="hud-mono">WINDOWS DESKTOP APPLICATION</span>
+          </div>
+
+          <h1 class="hero-heading">
+            Multi-stream file downloads for Windows.
+          </h1>
+
+          <p class="hero-description">
+            DashFlow is an engineered desktop download manager for Windows. It splits files into simultaneous multi-stream segments, bypassing server throttling with real-time socket rebalancing and one-click browser interception.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Setup.exe" class="primary-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download for Windows</span>
+              <span class="tag-version">.exe</span>
+            </a>
+
+            <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Extension.zip" class="secondary-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                <line x1="16" y1="8" x2="2" y2="22"></line>
+                <line x1="17.5" y1="15" x2="9" y2="15"></line>
+              </svg>
+              <span>Browser Extension</span>
+              <span class="tag-version">.zip</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Authentic DashFlow Desktop App Interface Showcase -->
+        <div class="app-window-frame" id="features">
+          <!-- Windows Native Titlebar & Header -->
+          <div class="window-titlebar">
+            <!-- Sidebar Header with Brand -->
+            <div class="titlebar-brand-area">
+              <img src="assets/logo.svg" alt="DashFlow Logo" class="app-logo-squircle">
+              <span class="app-brand-title">Dash<span class="text-emerald">Flow</span></span>
+            </div>
+
+            <!-- Top Bar with LinkBar and TransferStatus -->
+            <div class="titlebar-main-bar">
+              <div class="app-linkbar-mock">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" class="link-icon">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                <span class="link-placeholder">Paste a download link…</span>
+                <span class="clipboard-icon" title="Paste from clipboard">📋</span>
+                <button class="linkbar-add-btn">+ Add</button>
+              </div>
+
+              <div class="app-transfer-status">
+                <span class="transfer-pill">
+                  <span class="pulse-emerald"></span>
+                  <span class="transfer-val" id="top-bar-speed">↓ 96.2 MB/s</span>
+                  <span class="transfer-count">&bull; 1 active</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Windows 11 Window Caption Controls -->
+            <div class="win-caption-controls">
+              <button class="win-ctrl-btn" title="Minimize">
+                <svg viewBox="0 0 10 1" width="10" height="1"><rect width="10" height="1" fill="currentColor"/></svg>
+              </button>
+              <button class="win-ctrl-btn" title="Maximize">
+                <svg viewBox="0 0 10 10" width="10" height="10"><rect width="9" height="9" x="0.5" y="0.5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+              </button>
+              <button class="win-ctrl-btn win-close" title="Close">
+                <svg viewBox="0 0 10 10" width="10" height="10">
+                  <line x1="0" y1="0" x2="10" y2="10" stroke="currentColor" stroke-width="1.2"/>
+                  <line x1="10" y1="0" x2="0" y2="10" stroke="currentColor" stroke-width="1.2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="app-ui-body">
+            <!-- Authentic App Sidebar -->
+            <aside class="app-sidebar">
+              <div class="sidebar-group">
+                <div class="sidebar-item active">
+                  <span class="item-icon text-emerald">⚡</span>
+                  <span class="item-label">All Downloads</span>
+                  <span class="item-count">4</span>
+                </div>
+                <div class="sidebar-item">
+                  <span class="item-icon">↓</span>
+                  <span class="item-label">Active</span>
+                  <span class="item-count text-emerald">1</span>
+                </div>
+                <div class="sidebar-item">
+                  <span class="item-icon">✓</span>
+                  <span class="item-label">Completed</span>
+                  <span class="item-count">3</span>
+                </div>
+              </div>
+
+              <div class="sidebar-group">
+                <span class="sidebar-heading">CATEGORIES</span>
+                <div class="sidebar-item">
+                  <span class="item-icon">📁</span>
+                  <span class="item-label">Programs</span>
+                </div>
+                <div class="sidebar-item">
+                  <span class="item-icon">🎬</span>
+                  <span class="item-label">Videos</span>
+                </div>
+                <div class="sidebar-item">
+                  <span class="item-icon">🎵</span>
+                  <span class="item-label">Audio</span>
+                </div>
+                <div class="sidebar-item">
+                  <span class="item-icon">📄</span>
+                  <span class="item-label">Documents</span>
+                </div>
+                <div class="sidebar-item">
+                  <span class="item-icon">📦</span>
+                  <span class="item-label">Compressed</span>
+                </div>
+              </div>
+
+              <div class="sidebar-bottom-bar">
+                <div class="sidebar-item">
+                  <span class="item-icon">⚙️</span>
+                  <span class="item-label">Settings</span>
+                </div>
+                <span class="theme-icon-btn" title="Toggle Theme">🌙</span>
+              </div>
+            </aside>
+
+            <!-- App Main Downloads View -->
+            <div class="app-main-view">
+              
+              <!-- Active Download Card with Live Turbo Engine Animation -->
+              <div class="real-download-card active-card">
+                <div class="card-top-row">
+                  <div class="file-type-icon">📦</div>
+                  <div class="card-info-col">
+                    <div class="card-title-line">
+                      <h4 class="card-filename">Ubuntu-24.04-desktop-amd64.iso</h4>
+                      <span class="card-pct" id="card-percent-display">68%</span>
+                    </div>
+                    <div class="card-sub-line">
+                      <span class="status-speed text-emerald" id="card-speed-display">96.2 MB/s</span>
+                      <span class="dot-sep">&bull;</span>
+                      <span id="card-bytes-display">3.95 GB / 5.82 GB</span>
+                      <span class="dot-sep">&bull;</span>
+                      <span id="card-eta-display">19s remaining</span>
+                      <span class="dot-sep">&bull;</span>
+                      <span class="path-dim">D:\Downloads\Compressed</span>
+                    </div>
+                  </div>
+
+                  <div class="card-action-btns">
+                    <button class="action-btn" title="Pause Download">⏸</button>
+                    <button class="action-btn" title="Open Folder">📁</button>
+                  </div>
+                </div>
+
+                <!-- Primary Progress Bar with Shimmer -->
+                <div class="card-progress-track">
+                  <div class="card-progress-bar" id="card-progress-bar" style="width: 68%;">
+                    <div class="bar-shimmer"></div>
+                  </div>
+                </div>
+
+                <!-- Multi-Threaded Segmentation Bar (Matching real SegmentBar.tsx) -->
+                <div class="segment-bar-module">
+                  <div class="segment-module-head">
+                    <div class="seg-left">
+                      <span class="cpu-icon">⚡</span>
+                      <span>Multi-Stream Segmentation</span>
+                    </div>
+                    <div class="seg-right" id="segment-hover-metric">
+                      Chunk #4: 245 MB / 363 MB (67%) &bull; 8.4 MB/s
+                    </div>
+                  </div>
+
+                  <div class="segments-grid-row" id="segments-grid">
+                    <!-- Segment Chunks Injected by script.js -->
+                  </div>
+                </div>
+
+                <!-- TURBO ENGINE IS RUNNING - Animated Accelerator Module -->
+                <div class="turbo-engine-strip">
+                  <div class="engine-core">
+                    <div class="turbine-container">
+                      <div class="turbine-glow-ring"></div>
+                      <div class="turbine-blades"></div>
+                    </div>
+                    <div class="engine-info">
+                      <div class="engine-status-tag">
+                        <span class="pulse-dot"></span>
+                        <span class="status-bold">TURBO ENGINE: ACTIVE</span>
+                        <span class="engine-tag-meta">PARALLEL ACCELERATION SOCKETS ACTIVE</span>
+                      </div>
+                      <div class="engine-rpm">REAL-TIME SOCKET REBALANCING ONLINE</div>
+                    </div>
+                  </div>
+
+                  <!-- Live Turbo Frequency Waveform Animation -->
+                  <div class="turbo-soundwave">
+                    <span class="wave-bar wb-1"></span>
+                    <span class="wave-bar wb-2"></span>
+                    <span class="wave-bar wb-3"></span>
+                    <span class="wave-bar wb-4"></span>
+                    <span class="wave-bar wb-5"></span>
+                    <span class="wave-bar wb-6"></span>
+                    <span class="wave-bar wb-7"></span>
+                    <span class="wave-bar wb-8"></span>
+                    <span class="wave-bar wb-9"></span>
+                    <span class="wave-bar wb-10"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Completed Downloads List (Matching real DashFlow Completed Cards) -->
+              <div class="recent-transfers-container">
+                <div class="recent-label">COMPLETED TRANSFERS</div>
+                
+                <div class="real-download-card completed-card">
+                  <div class="file-type-icon">📁</div>
+                  <div class="card-info-col">
+                    <div class="card-title-line">
+                      <h5 class="card-filename">Blender-4.2.0-windows-x64.msi</h5>
+                    </div>
+                    <div class="card-sub-line">
+                      <span>342.5 MB</span>
+                      <span class="dot-sep">&bull;</span>
+                      <span class="tag-completed">Completed</span>
+                      <span class="dot-sep">&bull;</span>
+                      <span class="path-dim">D:\Downloads\Programs</span>
+                    </div>
+                  </div>
+                  <button class="action-btn" title="Open Folder">📁</button>
+                </div>
+
+                <div class="real-download-card completed-card">
+                  <div class="file-type-icon">📁</div>
+                  <div class="card-info-col">
+                    <div class="card-title-line">
+                      <h5 class="card-filename">VSCodeUserSetup-x64-1.92.exe</h5>
+                    </div>
+                    <div class="card-sub-line">
+                      <span>98.4 MB</span>
+                      <span class="dot-sep">&bull;</span>
+                      <span class="tag-completed">Completed</span>
+                      <span class="dot-sep">&bull;</span>
+                      <span class="path-dim">D:\Downloads\Programs</span>
+                    </div>
+                  </div>
+                  <button class="action-btn" title="Open Folder">📁</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="section-boundary" id="engine">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="mono-label">[ ARCHITECTURE ]</div>
+          <h2 class="section-title">Core capabilities</h2>
+          <p class="section-subtitle">
+            Engineered for stability, predictable throughput, and minimal system resource usage.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <div class="bento-cell">
+            <div class="cell-tag">01 &bull; MULTI-STREAM ENGINE</div>
+            <h3 class="cell-title">Multi-Stream Acceleration</h3>
+            <p class="cell-desc">
+              Splits incoming files into concurrent byte-range connections. Each stream downloads simultaneously, saturating connection bandwidth and bypassing single-connection server throttling.
+            </p>
+            <div class="cell-visual-line">
+              <div class="stream-line"></div>
+              <div class="stream-pulse"></div>
+            </div>
+          </div>
+
+          <div class="bento-cell">
+            <div class="cell-tag">02 &bull; SOCKET BALANCING</div>
+            <h3 class="cell-title">Real-Time Socket Rebalancing</h3>
+            <p class="cell-desc">
+              When an individual connection slows down or encounters latency, idle sockets dynamically take over unfinished byte ranges to ensure balanced, prompt completion.
+            </p>
+          </div>
+
+          <div class="bento-cell">
+            <div class="cell-tag">03 &bull; EXTENSION</div>
+            <h3 class="cell-title">One-Click Browser Interception</h3>
+            <p class="cell-desc">
+              The companion Chromium extension intercepts download links directly from Chrome, Edge, Brave, and Opera, passing them seamlessly to the desktop manager.
+            </p>
+          </div>
+
+          <div class="bento-cell">
+            <div class="cell-tag">04 &bull; VIDEO DOWNLOADS</div>
+            <h3 class="cell-title">Video Downloads via Extension</h3>
+            <p class="cell-desc">
+              Get any video downloaded directly with the extension. Easily capture streaming web videos right from your browser without third-party converters.
+            </p>
+          </div>
+
+          <div class="bento-cell">
+            <div class="cell-tag">05 &bull; RESUME & INTEGRITY</div>
+            <h3 class="cell-title">Checkpoint Resume & Recovery</h3>
+            <p class="cell-desc">
+              Interrupted or paused downloads resume from exact byte checkpoints without restarting transfers or corrupting files on disk.
+            </p>
+          </div>
+
+          <div class="bento-cell">
+            <div class="cell-tag">06 &bull; QUEUE</div>
+            <h3 class="cell-title">Queue & Bandwidth Limits</h3>
+            <p class="cell-desc">
+              Manage multiple downloads with priority queuing and optional speed limits to maintain responsive network performance for other applications.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section-boundary" id="benchmarks">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="mono-label">[ COMPARISON ]</div>
+          <h2 class="section-title">Feature comparison</h2>
+          <p class="section-subtitle">How DashFlow compares against standard browsers and legacy download utilities.</p>
+        </div>
+
+        <div class="table-frame">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th class="col-highlight">DashFlow</th>
+                <th>Standard Browser</th>
+                <th>Legacy Downloaders</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell-feature">Parallel Stream Connections</td>
+                <td class="col-highlight text-emerald">Multi-Stream Acceleration</td>
+                <td class="text-muted">Single Stream</td>
+                <td>Static Multi-Stream</td>
+              </tr>
+              <tr>
+                <td class="cell-feature">Real-Time Socket Rebalancing</td>
+                <td class="col-highlight text-emerald">Automatic</td>
+                <td class="text-muted">Not supported</td>
+                <td>Static / Manual</td>
+              </tr>
+              <tr>
+                <td class="cell-feature">Video Downloads with Extension</td>
+                <td class="col-highlight text-emerald">Direct 1-Click</td>
+                <td class="text-muted">Not supported</td>
+                <td>Separate Add-ons</td>
+              </tr>
+              <tr>
+                <td class="cell-feature">Interrupted Download Resuming</td>
+                <td class="col-highlight text-emerald">Byte-level Checkpoints</td>
+                <td class="text-muted">Basic / Often Fails</td>
+                <td>Supported</td>
+              </tr>
+              <tr>
+                <td class="cell-feature">Browser Link Interception</td>
+                <td class="col-highlight text-emerald">One-click Extension</td>
+                <td class="text-muted">Default</td>
+                <td>Complex Add-ons</td>
+              </tr>
+              <tr>
+                <td class="cell-feature">User Interface</td>
+                <td class="col-highlight text-emerald">Modern Dark UI</td>
+                <td class="text-muted">Downloads Tab</td>
+                <td>Legacy UI</td>
+              </tr>
+              <tr>
+                <td class="cell-feature">Adware & Bundled Toolbars</td>
+                <td class="col-highlight text-emerald">None</td>
+                <td class="text-muted">None</td>
+                <td class="text-alert">Frequently Bundled</td>
+              </tr>
+              <tr>
+                <td class="cell-feature">Licensing</td>
+                <td class="col-highlight text-emerald">Free Utility</td>
+                <td class="text-muted">Free</td>
+                <td class="text-alert">Paid License ($25+)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="section-boundary" id="downloads">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="mono-label">[ DOWNLOADS ]</div>
+          <h2 class="section-title">Install DashFlow</h2>
+          <p class="section-subtitle">Official binaries distributed via GitHub Releases.</p>
+        </div>
+
+        <div class="download-grid">
+          
+          <!-- Windows Desktop Card -->
+          <div class="download-block primary-block">
+            <div class="block-top">
+              <div class="block-badge">DESKTOP APP</div>
+              <div class="block-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                  <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.949-1.801"/>
+                </svg>
+              </div>
+            </div>
+
+            <h3 class="block-title">DashFlow for Windows</h3>
+            <p class="block-summary">
+              Standalone desktop application with multi-stream segment acceleration, queue management, and system tray integration.
+            </p>
+
+            <ul class="block-specs">
+              <li>&bull; Platform: Windows 10 / 11 (64-bit)</li>
+              <li>&bull; Architecture: x64 (AMD64 / Intel 64)</li>
+              <li>&bull; Package: NSIS Setup Executable</li>
+              <li>&bull; License: Free Utility</li>
+            </ul>
+
+            <div class="block-cta">
+              <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Setup.exe" class="primary-btn full-btn">
+                <span>Download DashFlow-Setup.exe</span>
+                <span>&darr;</span>
+              </a>
+              <span class="file-checksum" title="SHA-256 Checksum">SHA-256: 7c2694010543c2993d2d71f8be96ef109a6c52d3e7bb5423f54e977831bdf781</span>
+            </div>
+          </div>
+
+          <!-- Browser Extension Card -->
+          <div class="download-block">
+            <div class="block-top">
+              <div class="block-badge">BROWSER EXTENSION</div>
+              <div class="block-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                  <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+
+            <h3 class="block-title">Chromium Extension</h3>
+            <p class="block-summary">
+              Companion extension that intercepts download links and lets you get any web video downloaded directly from your browser.
+            </p>
+
+            <ul class="block-specs">
+              <li>&bull; Compatible with Chrome, Edge, Brave, Opera</li>
+              <li>&bull; Manifest V3 standard</li>
+              <li>&bull; One-click download interception</li>
+              <li>&bull; Direct web video downloading</li>
+            </ul>
+
+            <div class="block-cta">
+              <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Extension.zip" class="secondary-btn full-btn">
+                <span>Download DashFlow-Extension.zip</span>
+                <span>&darr;</span>
+              </a>
+              <span class="file-checksum">Unpack & Load in Developer Mode</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Extension Setup Steps -->
+        <div class="setup-walkthrough" id="extension">
+          <div class="walkthrough-header">
+            <span class="mono-label">[ EXTENSION SETUP ]</span>
+          </div>
+          <div class="walkthrough-grid">
+            <div class="walkthrough-step">
+              <span class="step-idx">01</span>
+              <span class="step-title">Unpack Archive</span>
+              <span class="step-info">Extract <code>DashFlow-Extension.zip</code> into a local folder.</span>
+            </div>
+            <div class="walkthrough-step">
+              <span class="step-idx">02</span>
+              <span class="step-title">Open Extensions</span>
+              <span class="step-info">Navigate to <code>chrome://extensions</code> or <code>edge://extensions</code>.</span>
+            </div>
+            <div class="walkthrough-step">
+              <span class="step-idx">03</span>
+              <span class="step-title">Developer Mode</span>
+              <span class="step-info">Toggle <b>Developer mode</b> ON in the top-right corner.</span>
+            </div>
+            <div class="walkthrough-step">
+              <span class="step-idx">04</span>
+              <span class="step-title">Load Unpacked</span>
+              <span class="step-info">Click <b>Load unpacked</b> and select the extracted extension folder.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security & Permissions Explanation -->
+        <div class="setup-walkthrough" id="security" style="margin-top: 24px;">
+          <div class="walkthrough-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span class="mono-label">[ SECURITY, PRIVACY &amp; EXTENSION PERMISSIONS ]</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-emerald);">🔒 100% CLEAN &bull; ZERO MALWARE &bull; LOCAL ONLY</span>
+          </div>
+
+          <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            DashFlow is engineered on a strict <b>Local-First Architecture</b>. All file downloads, personal credentials, and browsing links stay strictly on your computer. The browser extension communicates solely with your local desktop application (<code>http://127.0.0.1:9527</code>). DashFlow is 100% free of viruses, adware, toolbars, and cryptocurrency miners.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 16px;">
+              <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px;">downloads</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Intercepts browser file downloads and hands them over to DashFlow's parallel multi-stream acceleration engine.</div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 16px;">
+              <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px;">webRequest</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Detects downloadable file extensions and MIME headers (.zip, .exe, .iso, .mp4) to trigger the pre-download prompt.</div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 16px;">
+              <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px;">cookies</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Securely forwards session authentication to DashFlow's local media engine so you can download high-resolution streams you have access to.</div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 16px;">
+              <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px;">contextMenus &amp; notifications</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Adds "Download with DashFlow" to the right-click menu and alerts you when large background downloads complete.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Technical Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="" class="footer-logo">
+          <span class="footer-name">DashFlow</span>
+        </div>
+        <p class="footer-about">
+          Engineered desktop download manager for Windows.
+        </p>
+        <span class="footer-copy">&copy; 2026 DashFlow. All rights reserved.</span>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-col">
+          <span class="footer-head">RELEASES</span>
+          <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Setup.exe">Windows Setup (.exe)</a>
+          <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Extension.zip">Browser Extension (.zip)</a>
+          <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest">Release History</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-head">DOCUMENTATION</span>
+          <a href="https://github.com/amanpandey1407/dashflow-releases#readme">Installation Guide</a>
+          <a href="https://github.com/amanpandey1407/dashflow-releases#system-requirements">System Requirements</a>
+          <a href="https://github.com/amanpandey1407/dashflow-releases">GitHub Repository</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

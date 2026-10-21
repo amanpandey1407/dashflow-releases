@@ -1,0 +1,29 @@
+name: Validate Manifest
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'version.json'
+      - 'version.schema.json'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'version.json'
+      - 'version.schema.json'
+
+jobs:
+  validate:
+    name: Verify version.json syntax & semver
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Manifest Validator
+        run: node scripts/validate-manifest.mjs version.json

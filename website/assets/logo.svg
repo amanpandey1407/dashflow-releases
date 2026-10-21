@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- Same logo as the Android app (res/drawable/ic_launcher_foreground.xml on #0B0F14),
+       cropped to the 72dp area Android shows of its 108dp adaptive icon -->
+  <rect width="256" height="256" rx="56" fill="#0B0F14"/>
+  <path transform="scale(3.5556) translate(-18 -18)" fill="#10B981" d="M59,30 L38,58 L52,58 L47,78 L70,48 L56,48 Z"/>
+</svg>

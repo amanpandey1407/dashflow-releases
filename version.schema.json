@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DashFlow Version Manifest Schema",
+  "description": "Schema definition for DashFlow update feed manifest (version.json)",
+  "type": "object",
+  "required": [
+    "desktop"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "desktop": {
+      "type": "object",
+      "required": [
+        "latestVersion",
+        "minVersion",
+        "releaseNotes",
+        "downloadUrl"
+      ],
+      "properties": {
+        "latestVersion": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?$",
+          "description": "The latest available desktop release version (SemVer)."
+        },
+        "minVersion": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?$",
+          "description": "The minimum allowed desktop version. Versions below this will be locked out until updated."
+        },
+        "releaseNotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Bullet points highlighting what's new in this release."
+        },
+        "downloadUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct download link to the Windows installer .exe file."
+        },
+        "releasePageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Web URL to the GitHub release page."
+        },
+        "mandatoryMessage": {
+          "type": "string",
+          "description": "Custom notice displayed when an outdated client is locked out."
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$",
+          "description": "Optional SHA256 cryptographic hash of the installer for checksum verification."
+        }
+      }
+    }
+  }
+}
