@@ -1,7 +1,7 @@
 {
   "$schema": "./version.schema.json",
   "desktop": {
-    "latestVersion": "1.0.0",
+    "latestVersion": "1.1.0",
     "minVersion": "1.0.0",
     "releaseNotes": [
       "Initial release of DashFlow high-speed download manager",
@@ -10,9 +10,9 @@
       "Built-in streaming video and media support powered by yt-dlp",
       "Categorized folders, custom themes, and system tray background mode"
     ],
-    "downloadUrl": "https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Setup.exe",
+    "downloadUrl": "https://github.com/amanpandey1407/dashflow-releases/releases/download/v1.1.0/DashFlow-Setup.exe",
     "releasePageUrl": "https://github.com/amanpandey1407/dashflow-releases/releases/latest",
     "mandatoryMessage": "This version of DashFlow is outdated and no longer supported. Please update to continue downloading.",
-    "sha256": "7c2694010543c2993d2d71f8be96ef109a6c52d3e7bb5423f54e977831bdf781"
+    "sha256": "48bd71ebef9e76105aa353b3710931a5de3828dd9d95d309cb95bc0000f6bfe3"
   }
 }
