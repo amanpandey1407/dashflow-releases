@@ -9,7 +9,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initWarpCanvas();
   initLiveTransferShowcase();
   initDynamicVersion();
+  initMobileMenu();
 });
+
+/* ==========================================================================
+   Mobile Navigation Drawer
+   ========================================================================== */
+function initMobileMenu() {
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const navDrawer = document.getElementById('mobile-nav-drawer');
+  if (!menuBtn || !navDrawer) return;
+
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuBtn.classList.toggle('active');
+    navDrawer.classList.toggle('open');
+  });
+
+  navDrawer.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuBtn.classList.remove('active');
+      navDrawer.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !navDrawer.contains(e.target)) {
+      menuBtn.classList.remove('active');
+      navDrawer.classList.remove('open');
+    }
+  });
+}
 
 /* ==========================================================================
    1. Cosmic Warp Speed Particle Canvas

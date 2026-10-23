@@ -36,17 +36,35 @@
       </nav>
 
       <div class="nav-right">
-        <a href="https://github.com/amanpandey1407/dashflow-releases" target="_blank" rel="noopener" class="nav-github-btn">
+        <a href="https://github.com/amanpandey1407/dashflow-releases" target="_blank" rel="noopener" class="nav-github-btn" title="GitHub Repository">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
           </svg>
-          <span>GitHub</span>
+          <span class="github-btn-text">GitHub</span>
         </a>
         <a href="https://github.com/amanpandey1407/dashflow-releases/releases/latest/download/DashFlow-Setup.exe" class="nav-cta-btn">
           <span>Download</span>
           <span class="btn-arrow">&darr;</span>
         </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <nav class="mobile-nav-links">
+        <a href="#features" class="mobile-nav-link">⚡ Features</a>
+        <a href="#engine" class="mobile-nav-link">🏗️ Architecture</a>
+        <a href="#benchmarks" class="mobile-nav-link">📊 Comparison</a>
+        <a href="#extension" class="mobile-nav-link">🧩 Extension</a>
+        <a href="#security" class="mobile-nav-link">🛡️ Security</a>
+        <a href="#downloads" class="mobile-nav-link">📥 Downloads</a>
+        <a href="https://github.com/amanpandey1407/dashflow-releases" target="_blank" rel="noopener" class="mobile-nav-link mobile-nav-github">💻 View on GitHub &rarr;</a>
+      </nav>
     </div>
   </header>
 
@@ -513,7 +531,7 @@
                 <span>Download DashFlow-Setup.exe</span>
                 <span>&darr;</span>
               </a>
-              <span class="file-checksum" title="SHA-256 Checksum">SHA-256: 7c2694010543c2993d2d71f8be96ef109a6c52d3e7bb5423f54e977831bdf781</span>
+              <span class="file-checksum">Standalone Installer &bull; 64-bit</span>
             </div>
           </div>
 
@@ -595,25 +613,25 @@
             DashFlow is engineered on a strict <b>Local-First Architecture</b>. All file downloads, personal credentials, and browsing links stay strictly on your computer. The browser extension communicates solely with your local desktop application (<code>http://127.0.0.1:9527</code>). DashFlow is 100% free of viruses, adware, toolbars, and cryptocurrency miners.
           </p>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
-            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 16px;">
-              <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px;">downloads</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Intercepts browser file downloads and hands them over to DashFlow's parallel multi-stream acceleration engine.</div>
+          <div class="security-cards-grid">
+            <div class="security-card-item">
+              <div class="security-card-title">downloads</div>
+              <div class="security-card-desc">Intercepts browser file downloads and hands them over to DashFlow's parallel multi-stream acceleration engine.</div>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 16px;">
-              <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px;">webRequest</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Detects downloadable file extensions and MIME headers (.zip, .exe, .iso, .mp4) to trigger the pre-download prompt.</div>
+            <div class="security-card-item">
+              <div class="security-card-title">webRequest</div>
+              <div class="security-card-desc">Detects downloadable file extensions and MIME headers (.zip, .exe, .iso, .mp4) to trigger the pre-download prompt.</div>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 16px;">
-              <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px;">cookies</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Securely forwards session authentication to DashFlow's local media engine so you can download high-resolution streams you have access to.</div>
+            <div class="security-card-item">
+              <div class="security-card-title">cookies</div>
+              <div class="security-card-desc">Securely forwards session authentication to DashFlow's local media engine so you can download high-resolution streams you have access to.</div>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 16px;">
-              <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px;">contextMenus &amp; notifications</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Adds "Download with DashFlow" to the right-click menu and alerts you when large background downloads complete.</div>
+            <div class="security-card-item">
+              <div class="security-card-title">contextMenus &amp; notifications</div>
+              <div class="security-card-desc">Adds "Download with DashFlow" to the right-click menu and alerts you when large background downloads complete.</div>
             </div>
           </div>
         </div>

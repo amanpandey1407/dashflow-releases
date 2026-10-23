@@ -1306,6 +1306,132 @@ body > * {
   color: #fff;
 }
 
+/* Security Cards Grid */
+.security-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.security-card-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 16px;
+  transition: var(--transition-fast);
+}
+
+.security-card-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.security-card-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.security-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Mobile Menu Toggle & Navigation Drawer */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 44px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--line-color);
+  cursor: pointer;
+  padding: 0 12px;
+}
+
+.mobile-menu-toggle .menu-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.mobile-menu-toggle.active .menu-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active .menu-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .menu-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-nav-drawer {
+  display: none;
+  background: rgba(11, 13, 18, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line-color);
+  padding: 16px 20px;
+  position: absolute;
+  top: 52px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 85;
+}
+
+.mobile-nav-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 9px 12px;
+  border-radius: 6px;
+  transition: var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  color: #fff;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.mobile-nav-github {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-color);
+  color: var(--accent-emerald);
+  font-weight: 600;
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -1390,24 +1516,370 @@ body > * {
 }
 
 /* ==========================================================================
-   Responsive Adaptations
+   Comprehensive Mobile & Tablet Responsive Adaptations
    ========================================================================== */
 @media (max-width: 992px) {
+  .nav-center { display: none; }
+  .mobile-menu-toggle { display: flex; }
+  .mobile-nav-drawer { display: block; }
+
   .hero-heading { font-size: 2.8rem; }
-  .bento-grid { grid-template-columns: 1fr; border-left: none; }
+  .bento-grid { 
+    grid-template-columns: 1fr; 
+    border-left: 1px solid var(--line-color); 
+    border-radius: 12px; 
+    overflow: hidden; 
+  }
   .bento-span-2 { grid-column: span 1; }
   .download-grid { grid-template-columns: 1fr; }
-  .walkthrough-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .walkthrough-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .app-sidebar { display: none; }
 }
 
 @media (max-width: 768px) {
-  .nav-center, .brand-sub { display: none; }
-  .nav-left { border-right: none; }
-  .hero-heading { font-size: 2.2rem; }
-  .hero-description { font-size: 0.98rem; }
-  .hero-meta-row { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .meta-separator { display: none; }
-  .walkthrough-grid { grid-template-columns: 1fr; }
-  .footer-nav { flex-direction: column; gap: 30px; }
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header */
+  .site-header {
+    height: 50px;
+  }
+  .nav-container {
+    padding: 0 12px;
+    height: 50px;
+  }
+  .nav-left {
+    padding-right: 0;
+    border-right: none;
+    gap: 8px;
+  }
+  .brand-logo {
+    width: 24px;
+    height: 24px;
+  }
+  .brand-name {
+    font-size: 0.98rem;
+  }
+  .brand-sub {
+    display: none;
+  }
+  .nav-github-btn {
+    padding: 0 10px;
+  }
+  .github-btn-text {
+    display: none;
+  }
+  .nav-cta-btn {
+    padding: 0 12px;
+    font-size: 0.78rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 42px 0 32px 0;
+  }
+  .hero-header-box {
+    margin-bottom: 28px;
+  }
+  .hud-pill {
+    padding: 4px 10px;
+    margin-bottom: 16px;
+  }
+  .hud-mono {
+    font-size: 0.66rem;
+  }
+  .hero-heading {
+    font-size: clamp(1.85rem, 6.5vw, 2.4rem);
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .hero-description {
+    font-size: 0.94rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+    padding: 0 4px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 0.88rem;
+  }
+
+  /* Desktop App Window Showcase */
+  .app-window-frame {
+    border-radius: 10px;
+  }
+  .window-titlebar {
+    height: 42px;
+    padding: 0 10px;
+  }
+  .titlebar-brand-area {
+    width: auto;
+    border-right: none;
+    padding: 0;
+    gap: 8px;
+  }
+  .app-brand-title {
+    font-size: 0.88rem;
+  }
+  .titlebar-main-bar {
+    padding: 0 6px;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+  .app-linkbar-mock {
+    display: none;
+  }
+  .app-transfer-status {
+    margin-left: 0;
+  }
+  .transfer-pill {
+    padding: 3px 8px;
+    font-size: 0.68rem;
+  }
+  .transfer-count {
+    display: none;
+  }
+  .win-caption-controls {
+    display: none;
+  }
+
+  .app-ui-body {
+    min-height: auto;
+  }
+  .app-main-view {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .real-download-card {
+    padding: 12px;
+  }
+  .card-top-row {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .file-type-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+  .card-filename {
+    font-size: 0.82rem;
+  }
+  .card-pct {
+    font-size: 0.78rem;
+  }
+  .card-sub-line {
+    font-size: 0.68rem;
+    gap: 4px;
+  }
+  .path-dim {
+    display: none;
+  }
+  .card-action-btns {
+    display: none;
+  }
+
+  .segment-bar-module {
+    padding: 8px 10px;
+    margin-bottom: 10px;
+  }
+  .segment-module-head {
+    font-size: 0.68rem;
+    margin-bottom: 6px;
+  }
+  .seg-right {
+    font-size: 0.64rem;
+  }
+  .segments-grid-row {
+    height: 12px;
+    gap: 2px;
+  }
+
+  .turbo-engine-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .engine-core {
+    gap: 10px;
+    width: 100%;
+  }
+  .turbine-container {
+    width: 28px;
+    height: 28px;
+  }
+  .turbine-blades {
+    width: 18px;
+    height: 18px;
+  }
+  .engine-status-tag {
+    font-size: 0.68rem;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .engine-tag-meta {
+    display: none;
+  }
+  .engine-rpm {
+    font-size: 0.62rem;
+  }
+  .turbo-soundwave {
+    align-self: flex-end;
+    margin-top: -12px;
+    height: 14px;
+  }
+
+  .recent-transfers-container {
+    gap: 6px;
+  }
+  .recent-label {
+    font-size: 0.62rem;
+  }
+  .completed-card {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .completed-card .file-type-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 0.85rem;
+  }
+  .completed-card .card-filename {
+    font-size: 0.78rem;
+  }
+  .completed-card .card-sub-line {
+    font-size: 0.66rem;
+  }
+
+  /* Section Styling */
+  .section-boundary {
+    padding: 48px 0;
+  }
+  .section-header {
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-size: 1.7rem;
+    letter-spacing: -0.6px;
+  }
+  .section-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .bento-cell {
+    padding: 20px 16px;
+  }
+  .cell-title {
+    font-size: 1.12rem;
+  }
+  .cell-desc {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  /* Table */
+  .table-frame {
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+  }
+  .spec-table {
+    min-width: 500px;
+  }
+  .spec-table th,
+  .spec-table td {
+    padding: 10px 12px;
+    font-size: 0.78rem;
+  }
+
+  /* Downloads */
+  .download-block {
+    padding: 22px 16px;
+  }
+  .block-title {
+    font-size: 1.25rem;
+  }
+  .block-summary {
+    font-size: 0.86rem;
+    margin-bottom: 16px;
+  }
+  .block-specs {
+    font-size: 0.8rem;
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+  .primary-btn.full-btn,
+  .secondary-btn.full-btn {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+
+  /* Extension Setup */
+  .setup-walkthrough {
+    padding: 20px 16px;
+  }
+  .walkthrough-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .walkthrough-step {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .walkthrough-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Security Cards */
+  .security-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .security-card-item {
+    padding: 14px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 36px 0;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .footer-nav {
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 1.85rem;
+  }
+  .nav-cta-btn {
+    display: none; /* Keep header ultra clean on smallest screens, CTA is prominent in hero */
+  }
+  .bento-cell {
+    padding: 18px 14px;
+  }
+  .download-block {
+    padding: 18px 14px;
+  }
 }
