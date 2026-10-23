@@ -4,11 +4,11 @@
     "latestVersion": "1.1.0",
     "minVersion": "1.0.0",
     "releaseNotes": [
-      "Initial release of DashFlow high-speed download manager",
-      "Multi-threaded segment downloading engine with auto speed limiter",
-      "Full browser extension integration for seamless download interception",
-      "Built-in streaming video and media support powered by yt-dlp",
-      "Categorized folders, custom themes, and system tray background mode"
+      "Smart adaptive connection scaling for faster downloads across all file sizes",
+      "Improved browser extension stability and smoother video interception",
+      "Added dedicated Images category and expanded file format support",
+      "Streamlined download card controls with new quick action menu",
+      "General performance, stability, and UI improvements"
     ],
     "downloadUrl": "https://github.com/amanpandey1407/dashflow-releases/releases/download/v1.1.0/DashFlow-Setup.exe",
     "releasePageUrl": "https://github.com/amanpandey1407/dashflow-releases/releases/latest",
