@@ -1,7 +1,10 @@
-﻿.DS_Store
+.DS_Store
 Thumbs.db
 *.tmp
 
 *.exe
 *.zip
 release/
+
+# Local AI assistant rules (never push)
+AGENTS.md
