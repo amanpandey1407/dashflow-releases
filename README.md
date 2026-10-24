@@ -62,8 +62,8 @@ Verify the integrity of your installer to ensure it is authentic and has not bee
 
 | File | SHA-256 Checksum |
 | :--- | :--- |
-| **`DashFlow-Setup.exe`** | `48bd71ebef9e76105aa353b3710931a5de3828dd9d95d309cb95bc0000f6bfe3` |
-| **`DashFlow-Extension.zip`** | `ed02cb1a9ddc00db9f5849039c007e1fca24a7e6941fbc9a69d153bb9aa818e0` |
+| **`DashFlow-Setup.exe`** | `e0a2cee7452d4b27eea1c4800465af92f1970143130e6c24b2691292a6dce838` |
+| **`DashFlow-Extension.zip`** | `63e50107a036e5f60bb783e9eafeef4f4943cb2f88e03817c77249bf13b90314` |
 
 Verify in Windows PowerShell:
 ```powershell
