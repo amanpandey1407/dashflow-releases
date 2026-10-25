@@ -1,16 +1,16 @@
 {
   "$schema": "./version.schema.json",
   "desktop": {
-    "latestVersion": "1.2.0",
+    "latestVersion": "1.3.0",
     "minVersion": "1.0.0",
     "releaseNotes": [
       "Brand new Frosted Glass and Translucent acrylic theme skins in Appearance settings",
       "Enhanced download cards with improved category badges and smooth progress animations",
       "General UI improvements, performance optimizations, and stability fixes"
     ],
-    "downloadUrl": "https://github.com/amanpandey1407/dashflow-releases/releases/download/v1.2.0/DashFlow-Setup.exe",
+    "downloadUrl": "https://github.com/amanpandey1407/dashflow-releases/releases/download/v1.3.0/DashFlow-Setup.exe",
     "releasePageUrl": "https://github.com/amanpandey1407/dashflow-releases/releases/latest",
     "mandatoryMessage": "This version of DashFlow is outdated and no longer supported. Please update to continue downloading.",
-    "sha256": "e0a2cee7452d4b27eea1c4800465af92f1970143130e6c24b2691292a6dce838"
+    "sha256": "f8c955a6c069207f4f901d941cbe474fc8b4db624e0dec3f8b6871370a542353"
   }
 }
